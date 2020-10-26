@@ -1,0 +1,6 @@
+„то то так € и не разобралс€, ос строчками
+
+line 108
+
+     console.log("defaultProps: Default prop time!");
+    CounterParent.defaultProps = {};
