@@ -30,33 +30,51 @@
       }
 
       // our reducer
-      function favoriteColors(state, action) {
-        if (state === undefined) {
+      //По сути reducer - это преобразователь данных, а favoriteColors функция преобразования данных , через которую передаются Дествия(events)
+      //Еще что он возращает новое состояние return state
+      function favoriteColors(state, action) 
+      {
+        if (state === undefined) 
+        {
           state = [];
         }
 
         console.log("favoriteColors ; color = " + action.color + " type = " + action.type);
 
-        if (action.type == "ADD") {
+        if (action.type == "ADD") 
+        {
           return state.concat(action.color);
-        } else if (action.type == "REMOVE") {
-          return state.filter(function(item) {
+        }
+        else if (action.type == "REMOVE") 
+        {
+          return state.filter(function(item) 
+          {
             return item !== action.color;
           });
-        } else {
+        } 
+        else 
+        {
           return state;
         }
+
       }
 
       // the store
+      //Создаём Хранилище и утанавливаем функцию которая будет обрабатывать действие(actions)
       var store = Redux.createStore(favoriteColors);
       store.subscribe(render);
 
       function render() {
-        console.log(store.getState());
+        // console.log(store.getState());
+        // My
+        console.log("show state = ", store.getState());
+
+
       }
 
       // make changes!
+      //Выполняем действия они передаются на вход функции favoriteColors в параметр action
+
       store.dispatch(addColor("blue"));
       store.dispatch(addColor("yellow"));
       store.dispatch(addColor("green"));

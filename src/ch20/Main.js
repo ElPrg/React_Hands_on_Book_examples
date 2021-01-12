@@ -8,6 +8,10 @@ import Counter from "./Counter";
 
 function mapStateToProps(state) 
 {
+ 
+  // My
+  console.log("===mapStateToProps====");
+  
   return {
     countValue: state.count
   };
@@ -22,6 +26,8 @@ var decreaseAction = {type: "decrease"};
 
 function mapDispatchToProps(dispatch)
 {
+// My
+  console.log("===mapDispatchToProps====");
 
   return { 
     

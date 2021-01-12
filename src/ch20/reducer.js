@@ -4,10 +4,14 @@
 
 function counter(state, action)
 {
+    console.log("counter_dispatcher ; state = " + state + " type = " + action.type);
+
     if (state === undefined) 
     {
         return {count: 0};
     }
+
+    
 
     var count = state.count;
     switch (action.type) 
