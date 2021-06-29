@@ -10,7 +10,7 @@ function mapStateToProps(state)
 {
  
   // My
-  console.log("===mapStateToProps====");
+  console.log("===mapStateToProps====", "state ===" , state.count);
   
   return {
     countValue: state.count
@@ -40,10 +40,7 @@ function mapDispatchToProps(dispatch)
 
 
 // HOC component
-var connectedComponent = connect(
-mapStateToProps,
-mapDispatchToProps
-)(Counter);
+var connectedComponent = connect(mapStateToProps,mapDispatchToProps)(Counter);
 
 export default connectedComponent;
 

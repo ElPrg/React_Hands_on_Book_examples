@@ -25,6 +25,8 @@ render() {
             
       <Provider store={store}>
       <Main />
+      {/* My I add else Main */}
+      {/* <Main /> */}
       </Provider>
                     
     );
